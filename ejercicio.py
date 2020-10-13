@@ -4,7 +4,6 @@ import math
 from task2 import *
 from pseudo_steady_state import *
 #%%
-pwf = np.linspace(4000, 14.7, 100)
-#print(obtener_fw(0.365, 0.205, 2, 1, 20))
-print(obtener_q(10, 30, 2000, 1, 1.2, 2000, 0.244, 1))
+pwf = np.linspace(100, 3000, 20)
+print(calculate_q(pwf,30, 30, 3000, 2, 1.2, 2000, 0.244, 3))
 #%%
