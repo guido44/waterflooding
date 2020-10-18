@@ -4,7 +4,8 @@ from obtener_krw import *
 
 def calculate_fw(swc, sor, kromax, krwmax, no, nw, uo, uw, n):
     """
-    This function calculates the fractional flow using the relative permeabilities of the rock
+    This function calculates the fractional flow values using the relative permeabilities of the rock using the modified
+    Brooks-Corey relations
     :param swc: This is the critical saturation of water
     :param sor: This is the residual saturation of oil
     :param kromax: This is the maximum relative permeability for oil between 0 and 1
@@ -20,6 +21,7 @@ def calculate_fw(swc, sor, kromax, krwmax, no, nw, uo, uw, n):
     kro = calculate_kro(swc, sor, kromax, no, n)
     krw = calculate_krw(swc, sor, krwmax, nw, n)
     fw = 1 / (1 + ((kro * uw) / (krw * uo)))
+    # Creation of the result
     result = {'Sw:': sw, 'fw:': fw}
     dataframe = pd.DataFrame(result)
     return dataframe
